@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Table</title>
+<style>
+  .border-display {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .form-row {
+    margin-bottom: 10px;
+  }
+  .form-row label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+  }
+  .form-row input {
+    width: calc(100% - 160px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+
+<div class="border-display">
+  <table>
+    <tr>
+      <th>Embarque</th>
+      <th>Operacion</th>
+      <th>Caja</th>
+      <th>Unidad</th>
+      <th>Referencia interna</th>
+      <th>Cliente</th>
+      <th>Patio Origen</th>
+      <th>Patio Destino</th>
+      <th>llegada a Origen</th>
+      <th>Salida de Patio</th>
+      <th>Rojo MX</th>
+      <th>Sello</th>
+      <th>Verde Mex</th>
+      <th>Inspeccion USA</th>
+      <th>Tipo de Inspeccion</th>
+      <th>Sello</th>
+      <th>Verde USA</th>
+      <th>Resguardo</th>
+      <th>Patio</th>
+      <th>Entrega</th>
+      <th>Recibe</th>
+    </tr>
+    <tr class="row" id="92B1258732">
+      <td>92B1258732</td>
+      <td>Exportacion</td>
+      <td>TA125432</td>
+      <td>25c</td>
+      <td>S3215</td>
+      <td>Expeditors</td>
+      <td>Mor</td>
+      <td>Expeditors 1</td>
+      <td>03/28/2025 15:40</td>
+      <td>03/28/2025 18:16</td>
+      <td>03/28/2025 18:30</td>
+      <td>32158</td>
+      <td>03/28/2025 19:00</td>
+      <td>03/28/2025 19:16</td>
+      <td>GAMA</td>
+      <td>12534s</td>
+      <td>03/28/2025 19:40</td>
+      <td>N/A</td>
+      <td>n/A</td>
+      <td>03/28/2025 20:00</td>
+      <td>Juan</td>
+    </tr>
+
+    <tr class="row" id="92B1258735">
+      <td>92B1258735</td>
+      <td>Exportacion</td>
+      <td>TA125432</td>
+      <td>25c</td>
+      <td>S3215</td>
+      <td>Expeditors</td>
+      <td>Mor</td>
+      <td>Expeditors 1</td>
+      <td>03/28/2025 15:40</td>
+      <td>03/28/2025 18:16</td>
+      <td>03/28/2025 18:30</td>
+      <td>32158</td>
+      <td>03/28/2025 19:00</td>
+      <td>03/28/2025 19:16</td>
+      <td>GAMA</td>
+      <td>12534s</td>
+      <td>03/28/2025 19:40</td>
+      <td>N/A</td>
+      <td>n/A</td>
+      <td>03/28/2025 20:00</td>
+      <td>Juan</td>
+    </tr>
+
+    <tr class="row" id="92B1258731">
+      <td>92B1258731</td>
+      <td>Exportacion</td>
+      <td>TA125432</td>
+      <td>25c</td>
+      <td>S3215</td>
+      <td>Expeditors</td>
+      <td>Mor</td>
+      <td>Expeditors 1</td>
+      <td>03/28/2025 15:40</td>
+      <td>03/28/2025 18:16</td>
+      <td>03/28/2025 18:30</td>
+      <td>32158</td>
+      <td>03/28/2025 19:00</td>
+      <td>03/28/2025 19:16</td>
+      <td>GAMA</td>
+      <td>12534s</td>
+      <td>03/28/2025 19:40</td>
+      <td>N/A</td>
+      <td>n/A</td>
+      <td>03/28/2025 20:00</td>
+      <td>Juan</td>
+    </tr>
+  </table>
+</div>
+
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Detalles del Registro</h2>
+    <form id="modalForm">
+      <div class="form-row">
+        <label for="embarque">Embarque:</label>
+        <input type="text" id="embarque" name="embarque" readonly>
+      </div>
+      <div class="form-row">
+        <label for="operacion">Operacion:</label>
+        <input type="text" id="operacion" name="operacion" readonly>
+      </div>
+      <div class="form-row">
+        <label for="caja">Caja:</label>
+        <input type="text" id="caja" name="caja" readonly>
+      </div>
+      <div class="form-row">
+        <label for="unidad">Unidad:</label>
+        <input type="text" id="unidad" name="unidad" readonly>
+      </div>
+      <div class="form-row">
+        <label for="referencia_interna">Referencia interna:</label>
+        <input type="text" id="referencia_interna" name="referencia_interna" readonly>
+      </div>
+      <div class="form-row">
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" readonly>
+      </div>
+      <div class="form-row">
+        <label for="patio_origen">Patio Origen:</label>
+        <input type="text" id="patio_origen" name="patio_origen" readonly>
+      </div>
+      <div class="form-row">
+        <label for="patio_destino">Patio Destino:</label>
+        <input type="text" id="patio_destino" name="patio_destino" readonly>
+      </div>
+      <div class="form-row">
+        <label for="llegada_origen">llegada a Origen:</label>
+        <input type="text" id="llegada_origen" name="llegada_origen" readonly>
+      </div>
+      <div class="form-row">
+        <label for="salida_patio">Salida de Patio:</label>
+        <input type="text" id="salida_patio" name="salida_patio" readonly>
+      </div>
+      <div class="form-row">
+        <label for="rojo_mx">Rojo MX:</label>
+        <input type="text" id="rojo_mx" name="rojo_mx" readonly>
+      </div>
+      <div class="form-row">
+        <label for="sello_mx">Sello:</label>
+        <input type="text" id="sello_mx" name="sello_mx" readonly>
+      </div>
+      <div class="form-row">
+        <label for="verde_mex">Verde Mex:</label>
+        <input type="text" id="verde_mex" name="verde_mex" readonly>
+      </div>
+      <div class="form-row">
+        <label for="inspeccion_usa">Inspeccion USA:</label>
+        <input type="text" id="inspeccion_usa" name="inspeccion_usa" readonly>
+      </div>
+      <div class="form-row">
+        <label for="tipo_inspeccion">Tipo de Inspeccion:</label>
+        <input type="text" id="tipo_inspeccion" name="tipo_inspeccion" readonly>
+      </div>
+      <div class="form-row">
+        <label for="sello_usa">Sello:</label>
+        <input type="text" id="sello_usa" name="sello_usa" readonly>
+      </div>
+      <div class="form-row">
+        <label for="verde_usa">Verde USA:</label>
+        <input type="text" id="verde_usa" name="verde_usa" readonly>
+      </div>
+      <div class="form-row">
+        <label for="resguardo">Resguardo:</label>
+        <input type="text" id="resguardo" name="resguardo" readonly>
+      </div>
+      <div class="form-row">
+        <label for="patio">Patio:</label>
+        <input type="text" id="patio" name="patio" readonly>
+      </div>
+      <div class="form-row">
+        <label for="entrega">Entrega:</label>
+        <input type="text" id="entrega" name="entrega" readonly>
+      </div>
+      <div class="form-row">
+        <label for="recibe">Recibe:</label>
+        <input type="text" id="recibe" name="recibe" readonly>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const tableRows = document.querySelectorAll('.border-display table .row');
+  const modal = document.getElementById('infoModal');
+  const modalForm = document.getElementById('modalForm');
+  const closeButton = document.querySelector('.close-button');
+
+  tableRows.forEach(row => {
+    row.addEventListener('dblclick', function() {
+      const cells = this.querySelectorAll('td');
+      modalForm.embarque.value = cells[0].textContent;
+      modalForm.operacion.value = cells[1].textContent;
+      modalForm.caja.value = cells[2].textContent;
+      modalForm.unidad.value = cells[3].textContent;
+      modalForm.referencia_interna.value = cells[4].textContent;
+      modalForm.cliente.value = cells[5].textContent;
+      modalForm.patio_origen.value = cells[6].textContent;
+      modalForm.patio_destino.value = cells[7].textContent;
+      modalForm.llegada_origen.value = cells[8].textContent;
+      modalForm.salida_patio.value = cells[9].textContent;
+      modalForm.rojo_mx.value = cells[10].textContent;
+      modalForm.sello_mx.value = cells[11].textContent;
+      modalForm.verde_mex.value = cells[12].textContent;
+      modalForm.inspeccion_usa.value = cells[13].textContent;
+      modalForm.tipo_inspeccion.value = cells[14].textContent;
+      modalForm.sello_usa.value = cells[15].textContent;
+      modalForm.verde_usa.value = cells[16].textContent;
+      modalForm.resguardo.value = cells[17].textContent;
+      modalForm.patio.value = cells[18].textContent;
+      modalForm.entrega.value = cells[19].textContent;
+      modalForm.recibe.value = cells[20].textContent;
+      modal.style.display = "block";
+    });
+  });
+
+  closeButton.addEventListener('click', function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
