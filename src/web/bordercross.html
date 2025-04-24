@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Border Crossing</title>
+</head>
+<body>
+  
+
+
+
+<div class="container-update-shipment" id="container-update-shipment">
+<div class="capture-data-shipment-content" id="update-shipment-container" >
+    <span class="close">&times;</span>
+    <form action="/update_shipment" method="put" id="update" class="shipment-content">
+      <h2>Capturar Eventos</h2>
+        
+      
+          <div class="form-group-principal">
+            <label for="referencia">Embarque</label>
+            <input type="text" name="referencia" id="referencia">
+      
+            <label for="operacion">Operacion</label>
+            <input type="text" name="operacion" id="operacion">
+      
+            <label for="caja">Caja</label>
+            <input type="text" name="caja" id="caja">
+      
+            <label for="unidad">Unidad</label>
+            <input type="text" name="unidad" id="unidad">
+      
+            <label for="referencia_interna">Referencia interna</label>
+            <input type="text" name="referencia_interna" id="referencia_interna">
+      
+            <label for="cliente">Cliente</label>
+            <input type="text" name="cliente" id="cliente">
+      
+    
+            <label for="patio_origen">Patio Origen</label>
+            <input type="text" name="patio_origen" id="patio_origen">
+      
+     
+            <label for="patio_destion">Patio Destino</label>
+            <input type="text" name="patio_destion" id="patio_destion">
+          </div>
+      
+          <div class="form-group-pickup">
+            <h3>Recoleccion</h3>
+            <label for="recoleccion">llegada a Origen</label>
+            <input type="text" name="recoleccion" id="recoleccion">
+      
+            <label for="salida">Salida de Patio</label>
+            <input type="text" name="salida" id="salida">
+          </div>
+      
+          <div class="form-group-customs">
+            <h3>Aduana</h3>
+            <label for="inspeccion_rojo">Rojo MX</label>
+            <input type="text" name="inspeccion_rojo" id="inspeccion_rojo">
+      
+            <label for="sello_mex">Sello</label>
+            <input type="text" name="sello_mex" id="sello_mex">
+      
+            <label for="verde_mex">Verde Mex</label>
+            <input type="text" name="verde_mex" id="verde_mex">
+      
+            <label for="inspeccion_usa">Inspeccion USA</label>
+            <input type="text" name="inspeccion_usa" id="inspeccion_usa">
+      
+            <label for="tipo_inspeccion">Tipo de Inspeccion</label>
+            <input type="text" name="tipo_inspeccion" id="tipo_inspeccion">
+      
+            <label for="sello_usa">Sello</label>
+            <input type="text" name="sello_usa" id="sello_usa">
+          
+      
+            <label for="verde_usa">Verde USA</label>
+            <input type="text" name="verde_usa" id="verde_usa">
+          </div>
+          <div class="form-group-deliver">
+            <h3>Entrega</h3>
+            <label for="resguardo">Resguardo</label>
+            <input type="text" name="resguardo" id="resguardo">
+          
+            <label for="patio">Patio</label>
+            <input type="text" name="patio" id="patio">
+      
+            <label for="entrega">Entrega</label>
+            <input type="text" name="entrega" id="entrega">
+      
+            <label for="recibe">Recibe</label>
+            <input type="text" name="recibe" id="recibe">
+          </div>
+      
+          <button type="submit">Submit</button>
+        
+      </form>
+</div>    
+</div>
+
+<div class="border-crossing-capture-container" >
+  <div class= "search">
+  <input type="text" id="TextFiltro" autocomplete="off" placeholder="ingresasr Embarque , Referencia , Caja" maxlength="15" ><!--hay que agregar un icono de lupa-->
+  </div>
+
+  <h1 class="title"> Operacion del Dia </h1>
+
+  <div class ="btnUpdateshipment">
+      <button id ="btn-update-shipment">Actualizar Embarque</button>
+  </div>
+
+
+  <div class = "btnncapture">
+      <button id ="btn-cature-shipment">Capturar Embarque</button>
+  </div>
+  
+  <div class="pageupdate">
+      <button id="update_page"> Actualizar Pagina </button>
+  </div>
+  
+  <div class="filter">
+      <button id="button-filter">Filtrar por:</button>
+  </div>
+
+  <div class="exportshipment">
+      <button id="export-file">Exportar</button>
+  </div>
+
+</div>
+
+
+
+
+<div class="border-display">
+<table class="status">
+  <tr>
+      
+      <th>Embarque</th>   
+      
+      <th>Operacion</th>
+      
+      <th>Caja</th>
+      
+      <th>Unidad</th>
+      
+      <th>Referencia interna</th>       
+      
+      <th>Cliente</th>        
+      
+      <th>Patio Origen</th>        
+      
+      <th>Patio Destino</th>        
+      
+      <th>llegada a Origen</th>        
+      
+      <th>Salida de Patio</th>       
+      
+      <th>Rojo MX</th>        
+      
+      <th>Sello</th>        
+      
+      <th>Verde Mex</th>        
+      
+      <th>Inspeccion USA</th>        
+      
+      <th>Tipo de Inspeccion</th>        
+      
+      <th>Sello</th>        
+      
+      <th>Verde USA</th>        
+      
+      <th>Resguardo</th>        
+      
+      <th>Patio</th>        
+      
+      <th>Entrega</th>        
+      
+      <th>Recibe</th>
+      
+  </tr>
+  <tr class="row" id="92B1258732">
+      <td>92B1258732</td>
+      <td>Exportacion</td>
+      <td>TA125432</td>
+      <td>25c</td>
+      <td>S3215</td>
+      <td>Expeditors</td>
+      <td>Mor</td>
+      <td>Expeditors 1</td>
+      <td>03/28/2025 15:40</td>
+      <td>03/28/2025 18:16</td>
+      <td>03/28/2025 18:30</td>
+      <td>32158</td>
+      <td>03/28/2025 19:00</td>
+      <td>03/28/2025 19:16</td>
+      <td>GAMA</td>
+      <td>12534s</td>
+      <td>03/28/2025 19:40</td>
+      <td>N/A</td>
+      <td>n/A</td>
+      <td>03/28/2025 20:00</td>
+      <td>Juan</td>
+  </tr>
+  
+  <tr class="row" id="92B1258735">
+    <td>92B1258735</td>
+    <td>Exportacion</td>
+    <td>TA125432</td>
+    <td>25c</td>
+    <td>S3215</td>
+    <td>Expeditors</td>
+    <td>Mor</td>
+    <td>Expeditors 1</td>
+    <td>03/28/2025 15:40</td>
+    <td>03/28/2025 18:16</td>
+    <td>03/28/2025 18:30</td>
+    <td>32158</td>
+    <td>03/28/2025 19:00</td>
+    <td>03/28/2025 19:16</td>
+    <td>GAMA</td>
+    <td>12534s</td>
+    <td>03/28/2025 19:40</td>
+    <td>N/A</td>
+    <td>n/A</td>
+    <td>03/28/2025 20:00</td>
+    <td>Juan</td>
+</tr>
+
+<tr class="row" id="92B1258731">
+  <td>92B1258731</td>
+  <td>Exportacion</td>
+  <td>TA125432</td>
+  <td>25c</td>
+  <td>S3215</td>
+  <td>Expeditors</td>
+  <td>Mor</td>
+  <td>Expeditors 1</td>
+  <td>03/28/2025 15:40</td>
+  <td>03/28/2025 18:16</td>
+  <td>03/28/2025 18:30</td>
+  <td>32158</td>
+  <td>03/28/2025 19:00</td>
+  <td>03/28/2025 19:16</td>
+  <td>GAMA</td>
+  <td>12534s</td>
+  <td>03/28/2025 19:40</td>
+  <td>N/A</td>
+  <td>n/A</td>
+  <td>03/28/2025 20:00</td>
+  <td>Juan</td>
+</tr>
+</table>
+</div>
+<script type="module" src="./script/script.js"></script>
+</body>
+</html>
