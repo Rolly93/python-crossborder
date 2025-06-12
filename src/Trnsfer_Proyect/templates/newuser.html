@@ -1,0 +1,131 @@
+
+{% extends 'header.html' %}
+
+    {% block head %}
+    {% endblock  %}
+
+{% block body %}
+ 
+    
+<form class="newuser" action="/newuser" method="GET">
+    <h3 class="newuser">Create New User</h3>
+
+    <label for="username">New User</label>
+    <input type="text" placeholder="Username" id="username" name="username" required>
+    
+    <label for = "email"> Email</label>
+    <input type ="email" placeholder = "email" id= "email" name = "email" required>
+   
+
+ <div class="verification">
+        <ul>
+            
+            <li class="checkpass">
+                <label class="checkmark">
+                <span id="checkmarck_8characters" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </span>
+                Contraseña minimo 8 characteres
+            </label>
+        </li>
+
+            <li class="checkpass">
+                <label class="checkmark">
+                    <span id="checkmarck_iconNum">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                       <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </span>
+                    Minimo un numero
+                </label>
+            </li>
+            <li class="checkpass">
+                <label class="checkmark">
+                    <span id="checkmarck_iconUpper">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                       <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </span>
+                    Minimo un Caracter en Mayuscula
+                </label>
+            </li>
+
+            <li class="checkpass">
+                <label class="checkmark">
+                    <span id="checkmarck_iconLower">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                       <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                    </svg>
+                </span>
+                    Minimo un Caracter en minuscula
+                </label>
+            </li>
+
+            <li class="checkpass">
+                    <label class="checkmark">
+                        <span id="checkmarck_iconNonSpace">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                            </svg>
+                        </span>
+                        No Spaces
+                    </label>
+                </li>
+
+                <li class="checkpass">
+                        <label class="checkmark">
+                        <span id="checkmarck_iconIqual">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                            </svg>
+                        </span>
+                        Same Password
+                    </label>
+            </li>
+        </ul>
+    </div>
+
+    <label for="password">Password</label>
+    <input type="password" class="passwords" placeholder="Password" id="password" name = "password" required>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" class="passwords" placeholder="Confirm Password" id="confirm_password" name ="confirm_password" required>
+
+
+{% if show_messages %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+           {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+{% endif %}
+
+
+    <button type="submit">Create Username</button>
+    <a href="/login">
+        <button type="button">Cancel</button>
+    </a>
+
+</form>
+
+ <!--   <script href="./static/script.js"></script>
+-->
+</body>
+</html>
+        
+
+
+    
+    {% endblock  %}

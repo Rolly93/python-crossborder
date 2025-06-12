@@ -1,0 +1,23 @@
+
+{% extends 'header.html' %}
+
+    {% block head %}
+    {% endblock  %}
+
+    
+    {% block body %}
+    <div class="container">
+        <div class="backgroundsftp">
+            <h2 class="title">Catura de Conexion FTP</h2>
+            <form  class="capture_connection">            
+            <input type="text" placeholder="Host" required>
+            <input type="text" placeholder="Username"required>
+            <input type="text" placeholder="Port" >
+            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="Cliente">
+            <input type="text" placeholder="Carpeta de envio"><br>
+            <button type="button">Submit</button> <button>Cancel</button>
+        </form>        
+    </div>
+</div>
+    {% endblock  %}
