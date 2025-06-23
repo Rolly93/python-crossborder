@@ -14,7 +14,7 @@ if __name__ == "__main__":
     flask_thread.daemon = True
     flask_thread.start()
     
-    window = webview.create_window("Border Crossing App", "http://127.0.0.1:5000",height = 950)
+    window = webview.create_window("Border Crossing App", "https://python-crossborder.onrender.com",height = 950)
     
     webview.start()
     
