@@ -178,5 +178,5 @@ def displayTacking():
     return render_template("bordercross.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True , port=1000)
 

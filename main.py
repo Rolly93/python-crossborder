@@ -4,7 +4,7 @@ import threading
 from src.app import app
 
 def run_flask():
-    app.run(debug = False, port=10000 )
+    app.run(debug = False, port=5000)
     
 
 if __name__ == "__main__":
