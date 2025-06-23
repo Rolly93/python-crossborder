@@ -176,3 +176,4 @@ def displayTacking():
     #extrack the data from the Database
     
     return render_template("bordercross.html")
+app.run()
