@@ -35,7 +35,7 @@ shipment ={
 
 @app.route("/")
 def index():
-    return redirect("login")
+    return render_template("<h1> Webpage </h1>")
 
 @app.route("/favicon.ico")
 def  favicon():
