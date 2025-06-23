@@ -3,19 +3,19 @@ import email
 import phonenumbers
 
 class Employee:
-    def __init__(self,*args, **kwargs):
+    def __init__(self,firstname,lastname ,cellphone,btday,street,city,estado,garden,alta,ingreso,*args, **kwargs ):
 
         self._employeeId=employeeId
         self._firstname = firstname
         self._lastname = lastname 
-        self._phonenumber= phonenumber
         self._cellphone= cellphone
-        #self._charge=charge
-        #I Must let this pending // self._btday = btday
+        self._btday = btday
         self._street = street
         self._city=city
         self._estado=estado
         self._garden = garden
+        self._alta = alta
+        self._ingreso = ingreso
         
         @property
         def garden(self):
@@ -31,15 +31,7 @@ class Employee:
         @employeeId.setter
         def employeeId(self, value):
             self._employeeId = value
-        
-       # @property
-       # def charge(self):
-       #     return self._charge
-       # 
-       # @charge.setter
-       # def charge(self, value):
-       #     self._charge = value
-        
+   
         
         @property
         def street(self):
@@ -63,15 +55,7 @@ class Employee:
         @city.setter
         def city(self, value):
             self._city = valid_string(value,"ciudad")
-        
-        @property
-        def phonenumber(self):
-            return self._phoneNumber
-        
-        @phonenumber.setter
-        def phonenumber(self,value):
-            self._phoneNumber = validate_Number(value,'phone number')
-        
+
         
         @property 
         def cellphone(self):

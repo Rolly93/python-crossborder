@@ -9,7 +9,7 @@ class Department(Employee):
 class Capturista(Department):
     def __init__(self) :   
         self._department = "Capturista" 
-        self._email =  email
+        self._username =  userName
         super().__init__(self._department)
         
         def assignTrip (self):
@@ -26,18 +26,34 @@ class Capturista(Department):
             pass
         
         @property
-        def email (self):
-            return self._email
-        @email.setter
-        def email (self, email):
-            self._email = email
+        def userName (self):
+            return self._username
+        
+        @userName.setter
+        def userName (self, email):
+            self._username = userName
     
 class Transfer (Department):
-    def __init__(self, firstname, lastname, garden, employeeId, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         self._department = "Transfer"
-        super().__init__(firstname, lastname, garden, employeeId, self._department,*args, **kwargs)
+        self._precCanture = preCapture
+        self._userCapture = userCapture
+
+        super().__init__( self._department,*args, **kwargs)
         
-        pass
-    
+        @property
+        def preCapture(self):
+            return self._precCanture
+        
+        @preCapture.setter
+        def preCapture (self, preCapture):
+            self._precCanture = preCapture
+        @property
+        def userCapture(self):
+            return self._userCapture
+        
+        @userCapture.setter
+        def userCapture (self,userCapture):
+            self._userCapture = userCapture    
 
 

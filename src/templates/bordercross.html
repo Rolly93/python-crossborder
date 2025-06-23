@@ -1,0 +1,107 @@
+
+
+{% extends 'header.html' %}
+
+    {% block head %}
+    {% endblock  %}
+
+    
+    {% block body %}
+    
+    <div class="border-crossing-capture-container" >
+      <div class= "search">
+        <input type="text" id="TextFiltro" autocomplete="off" placeholder="ingresasr Embarque , Referencia , Caja" maxlength="15" ><!--hay que agregar un icono de lupa-->
+      </div>
+      
+      <h1 class="title"> Operacion del Dia </h1>
+      
+      
+      {% include 'captureshipmet.html' %}
+
+      {%include 'updateshipment.html'%}
+    
+    <div class="pageupdate">
+        <button id="update_page"> Actualizar Pagina </button>
+    </div>
+    
+    <div class="filter">
+        <button id="button-filter">Filtrar por:</button>
+    </div>
+  
+    <div class="exportshipment">
+        <button id="export-file">Exportar</button>
+    </div>
+  
+  </div>
+  
+  <div class="border-display">
+  <table class="status">
+    <tr>
+        <th>Embarque</th>   
+        <th>Operacion</th>
+        <th>Caja</th>
+        <th>Sello Origen</th>
+        <th>Unidad</th>
+        <th>Referencia interna</th>       
+        <th>Cliente</th>        
+        <th>Patio Origen</th>        
+        <th>Patio Destino</th>        
+        <th>llegada a Origen</th>        
+        <th>Salida de Patio</th>       
+        <th>Rojo MX</th>        
+        <th>Sello</th>        
+        <th>Verde Mex</th>        
+        <th>Inspeccion USA</th>        
+        <th>Tipo de Inspeccion</th>        
+        <th>Sello</th>        
+        <th>Verde USA</th>        
+        <th>Resguardo</th>        
+        <th>Patio</th>        
+        <th>Entrega</th>        
+        <th>Recibe</th>
+        
+    </tr>
+
+    
+    {%if shipments %}
+
+    {% for shipment in shipments%}
+    
+    <tr class="row" id="{{ shipment.embarque }}">
+      <td>{{ shipment.embarque }}</td>
+      <td>{{ shipment.tipoOperacion }}</td>
+      <td>{{ shipment.trailer }}</td>
+      <td>{{shipment.sello}}</td>
+      <td>{{shipment.unidad}}</td>
+      <td>{{ shipment.referencia }}</td>
+      <td>{{ shipment.cliente }}</td>
+      <td>{{ shipment.origen }}</td>
+      <td>{{ shipment.destino }} 1</td>
+      <td>{{shipment.recoleccion}}</td>
+      <td>{{shipment.salida}}</td>
+      <td>{{shipment.inspeccion_rojo}}</td>
+      <td>{{shipment.sello_mex}}</td>
+      <td>{{shipment.verde_mex}}</td>
+      <td>{{shipment.inspeccion_usa}}</td>
+      <td>{{shipment.tipo_inspeccion}}</td>
+      <td>{{shipment.sello_usa}}</td>
+      <td>{{shipment.verde_usa}}</td>
+      <td>{{shipment.resguardo}}</td>
+      <td>{{shipment.patio}}</td>
+      <td>{{shipment.recibe}}</td>
+    </tr>
+  
+    {% endfor%}
+    {%endif%}
+  </table>
+  
+  {%if not shipments %}
+  <div id= "">
+  <h2> Please insert a new Shipment<h2>
+    {%endif%}
+  </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="../static/script.js"></script>
+
+{% endblock%}

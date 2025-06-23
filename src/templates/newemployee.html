@@ -1,0 +1,76 @@
+
+
+{% extends 'header.html' %}
+
+    {% block head %}
+    {% endblock  %}
+
+    
+    {% block body %}
+
+     <form class="newemployee">
+        
+            <h3 class="title">Información Personal</h3>
+            
+            <div class="personadata">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" >
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" >
+
+                <label for="garden">Genero</label>
+                <input type="text" name="garden" id="garden" >
+
+                
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                
+                <label for="cellphone">Celular:</label>
+                <input type="tel" id="cellphone" name="cellphone" >
+            </div>
+
+            <div class="contact">
+
+
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city">
+                
+                <label for="state">Estado</label>
+                <input type="text" name="state" id="state">
+                
+                <label for="direccion">Calle:</label>
+                <input type="text" id="direccion" name="direccion" >
+
+                <label for="numero">Numero Interior</label>
+                <input type="text" name="numero" id="numero" >
+
+                
+
+            </div>
+            
+            <div class="charge">
+            <label for="puesto">Puesto de Trabajo:</label>
+            <select id="puesto" name="puesto">
+                <option value="capturista">Capturista</option>
+                <option value="operador">Operador</option>
+                <option value="administrador">Administrador</option>
+            </select>
+
+            <div id="operador">
+            <label for="unittruck">Tractor</label>
+            <input type="text" name="unittruck" id="unittruck">
+            </div>
+
+            <div id="administrador">
+            <label for="admit">Administrador</label>
+            <input type="checkbox" name="admit" checked id="admit" disabled> 
+            </div>
+            
+        </div>
+        <button type="submit">Guardar</button>
+        <button type="reset">Limpiar</button>
+        <a href="/login"><button id="cancel"><a>Cancel</button></a>
+    </form>
+</div>
+    {% endblock  %}

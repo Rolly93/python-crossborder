@@ -1,19 +1,19 @@
 
 class Shipment():
     
-    def __init__(self, *args, **kwargs):
-        self._client_reference = None #referencia_externa
-        self._type_operation = None #impor / exportacion
-        self._trailer = None #caja
+    def __init__(self,clientReference,client,internalReference,operation,origen,deliverTo,trailerNumber,seal, *args, **kwargs):
+        self._client_reference = clientReference 
+        self._client=client 
+        self._internal_reference= internalReference 
+        self._type_operation = operation 
+        self._pickup  = origen 
+        self._deliverto = deliverTo 
+        self._trailer = trailerNumber 
+        self._seal= seal
         self._unit_truck=None #unidad
-        self._internal_reference= None #referencia interna
-        self._client=None #cliente
-        self._pickup = None #donde se recolecta
-        self._deliverto = None #donde se entrega
         self._date_time = None
         self._event=None
         self._comments = None
-        self._seal=None
         self._safe_yard=None
         
         @property
@@ -127,31 +127,24 @@ class Shipment():
         precapture = self._client_reference,self._type_operation,self._unit_truck,self._pickup,self._deliverto,self._internal_reference,self._client
         return precapture
     
-class AssignShipmet(Shipment):
-    
-    def __init__(self,client_reference,type_operation,trailer,unit_truck,internal_reference,client,pickup ,deliverto,*args, **kwargs):
-        super(Shipment).__init__(*args, **kwargs)
-    
-    def PressignShipment(self):
-        # para enviar los datos al Db
+    def PreCature(self):
+        myNewData = self._client_reference,self._client,self._internal_reference,self._type_operation,self._pickup,self._deliverto,self._trailer,self._seal
+        #here ill send the data to db
+        print("Informacion Capturada \n",myNewData)
+        
         pass
     
-    def send_precapture(self):
-        #extraer los datos del Db
+    def AssgingShipemt(sefl):
         pass
     
-class CaptureTrip(Shipment):
-    def __init__(self,client_reference,client, date_time,event,comments,seal,safe_yard,*args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def SearchShipment(sefl):
         pass
     
-    def CaptureEvent(self):
-        # para enviar los datos a BD
+    def GetData(sefl):
         pass
     
-    def extracTrip():
-        #para extraer los viajes ya realizados
+    def DeleteShipment(sefl):
         pass
     
-    def evaluateEvent(self):
+    def UpDateShipment(sefl):
         pass
