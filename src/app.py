@@ -50,7 +50,7 @@ def login():
         password = request.args.get('password')
         if username and password:
             if str(username).lower() =="rolando":
-                return render_template("sft.html")
+                return redirect("newUser")
             else:
         
                 print(username, password)

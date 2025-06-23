@@ -393,6 +393,9 @@ table{
     border-collapse: collapse;
 
 }
+.row{
+    display: block;
+}
 tr.row:nth-child(even){
     background-color: #adc3f58f;
 }
