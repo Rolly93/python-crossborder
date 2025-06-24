@@ -15,12 +15,10 @@
       
       <h1 class="title"> Operacion del Dia </h1>
       
-      
-      {% include 'captureshipmet.html' %}
-
+      <div class="button">
+        {% include 'captureshipmet.html' %}
       {%include 'updateshipment.html'%}
-    
-    <div class="pageupdate">
+    <div class="pageupdate ">
         <button id="update_page"> Actualizar Pagina </button>
     </div>
     
@@ -31,10 +29,11 @@
     <div class="exportshipment">
         <button id="export-file">Exportar</button>
     </div>
+    </div>
   
   </div>
   
-  <div class="border-display">
+  <div >
   <table class="status">
     <tr>
         <th>Embarque</th>   
@@ -62,13 +61,11 @@
         
     </tr>
 
-    
-    {%if shipments %}
+{%if shipments %}
 
     {% for shipment in shipments%}
-    
-    <tr class="row" id="{{ shipment.embarque }}">
-      <td>{{ shipment.embarque }}</td>
+ <tr class="rw" id="{{ shipment.embarque }}">
+     <td>{{ shipment.embarque }}</td>
       <td>{{ shipment.tipoOperacion }}</td>
       <td>{{ shipment.trailer }}</td>
       <td>{{shipment.sello}}</td>
@@ -89,19 +86,17 @@
       <td>{{shipment.resguardo}}</td>
       <td>{{shipment.patio}}</td>
       <td>{{shipment.recibe}}</td>
+
     </tr>
-  
     {% endfor%}
     {%endif%}
   </table>
-  
-  {%if not shipments %}
-  <div id= "">
-  <h2> Please insert a new Shipment<h2>
-    {%endif%}
-  </div>
+    {%if not shipments %}
+    <div id= "">
+    <h2> Please insert a new Shipment<h2>
+    </div>
+      {%endif%}
   </div>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <script src="../static/script.js"></script>
 
 {% endblock%}

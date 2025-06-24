@@ -6,17 +6,21 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: #f2eef3;
+}
 button{
     cursor: pointer;
-    background: linear-gradient(to top , #0026ff,#0d92cff5);
+    background: linear-gradient(to top ,#aa2bbb,#d135e6);
     color: white;
     padding: 5px;
     border-radius: 50px;
 
 }
 
-
+*{
+    color: #e3a9eb;
+}
 .background{
     width: 430px;
     height: 520px;
@@ -27,13 +31,8 @@ button{
 }
 
 .main{
-    display:grid;
-    grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "sidebar main"
-    "sidebar footer";
     align-content: center;
+    justify-items: center;
 }
 
 .verification  {
@@ -229,9 +228,8 @@ form.newuser button{
 /*end of new user*/
 
 button:hover{
-    background: linear-gradient(to top ,#0570fc , #033d64);
-    color: white;
-    
+    background: linear-gradient(to top ,#d135e6 , #aa2bbb);
+
 }
 /*captura de deatos*/
 
@@ -343,33 +341,27 @@ button:hover{
 
 /*header de contenido*/
 .border-crossing-capture-container{
-    grid-area: header;
-    display: grid;
-    grid-template-areas: 
-    "h1 h1  "
-    "input button";
-    align-items: end;
-    justify-content: space-between;
-    background-color: #0068f0;
+    display: flex;
+    align-items: baseline;
+    color: rgb(19, 18, 18);
+    justify-content: space-evenly;   
+    background-color: #72c0df; 
+    flex-basis: 1fr 2fr ;
 }
 
 .border-crossing-capture-container h1{
-    grid-area: h1;
+    flex-grow: 1;
+
 }
 .border-crossing-capture-container button{
-   grid-area: button;
     height: 2em;
-    width: 150px;
+    margin-top: 50px;
+    width: 100%;
     background-color: #f1ecec;
     padding: .4rem;
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-}
-.button{
-    display:flex;
-    justify-content: flex-end;
-    margin-left :10px;
 }
 h1{
     color: #000;
@@ -377,7 +369,8 @@ h1{
   
 }
 .border-crossing-capture-container input{
-    grid-area: input;
+
+    display: block;
     width: 100%;
     background-color: rgba(17, 16, 16, 0.07);
     border-radius: 3px;
@@ -394,17 +387,17 @@ table * {
     width: 100px;
     font-size: 12px;
 }
-.status{
-    grid-area: main;
+table{
+    
     border-spacing: 0;
     border-collapse: collapse;
 
 }
 
-tr.rw:nth-child(even){
+tr.row:nth-child(even){
     background-color: #adc3f58f;
 }
-tr.rw:hover{
+tr.row:hover{
     background-color: #f2f222;
 }
 /*it ends the table*/

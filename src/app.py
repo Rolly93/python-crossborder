@@ -41,6 +41,7 @@ def index():
 def  favicon():
     return send_from_directory(app.root_path,'static/example.ico',mimetype = 'example.ico')
 
+
 @app.route('/login' , methods = ['GET','Post']) 
 def login():    
     username = None
@@ -157,8 +158,10 @@ def captureShipment():
       
     }
         shipments_data.append(shipment)
+        shipment=None
         print(shipments_data)
         return render_template("bordercross.html",shipments=shipments_data)
+    
     
     return redirect("displayTacking")
 
@@ -172,7 +175,6 @@ def updateShipment():
 
 @app.route('/bordercross')
 def displayTacking():
-    
     #extrack the data from the Database
     
     return render_template("bordercross.html")
