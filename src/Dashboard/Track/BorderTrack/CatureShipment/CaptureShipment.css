@@ -1,0 +1,35 @@
+.container{
+    color: black;
+position:fixed ;
+top: 0;
+background-color: rgba(255, 255, 255, 0.637);
+width: 100%;
+height: 100%;
+}
+.captureshipmet{
+    position:fixed ;
+    background-color: #00f3;
+    border-radius: 15px;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 80%;
+}
+.containercapture{
+    display: grid;
+    grid-template-columns: 3;
+    gap:10px;
+}
+.firstcolum , .secondcolum  , .thirthcolum {
+    display: flex;
+    flex-direction: column;
+}
+.firstcolum{
+    grid-column: 1;
+}
+.secondcolum {
+    grid-column: 2;
+}
+.thirthcolum{
+    grid-column: 3;
+} 

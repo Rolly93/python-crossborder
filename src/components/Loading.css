@@ -1,0 +1,36 @@
+@keyframes pulse {
+    0% {
+        background-color: #f0f0f0; /* Light gray start */
+    }
+    50% {
+        background-color: #e0e0e0; /* Slightly darker gray peak */
+    }
+    100% {
+        background-color: #f0f0f0; /* Back to light gray */
+    }
+}
+
+.skeleton-placeholder {
+    /* Set a standard height for the line of content */
+    height: 50%; 
+    /* Ensures the gray box has rounded corners */
+    border-radius: 4px;
+    /* Sets the width. Using a random width adds realism. */
+    width: 100%; 
+    /* The animation applied to the placeholder */
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Optional: Make some cells look shorter/longer for variety */
+.skeleton-row td:nth-child(5) .skeleton-placeholder {
+    width: 100%;
+}
+.skeleton-row td:nth-child(10) .skeleton-placeholder {
+    width: 100%;
+}
+
+/* Optional: Give the <td> cells a fixed height to prevent collapsing */
+.skeleton-row td {
+    padding: 8px; /* Adjust to match your real table row padding */
+    height: 42px; /* Set a fixed height */
+}

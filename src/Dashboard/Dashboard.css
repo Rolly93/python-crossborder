@@ -1,0 +1,60 @@
+table{
+    background-color: white;
+    color: black;
+    border-collapse: collapse;
+    
+
+    
+}
+
+.searchInput input{
+        border-radius: 5px;
+        background-color: #fffbe6;
+        color: black;
+}
+
+.searchInput input::placeholder{
+    color: #cc9900;
+}
+
+h2{
+    text-align: center;
+}
+td ,th {
+        border: black solid 1px;
+        width: 30ox;
+        
+}
+td{
+    padding: 3px;
+    text-align: center;;
+}
+tr:hover{
+    background-color: rgb(71, 194, 216);
+}
+.dash{
+
+    margin-top: 15px;
+}
+
+/* Styling for the container that holds the "No shipments found" message */
+.dash.no-results {
+    /* Ensures the container is styled clearly */
+    margin-top: 20px;
+    padding: 30px; /* Add more vertical space */
+    border: 1px solid #ffcc00; /* Yellow/orange border to draw attention */
+    background-color: #fffbe6; /* Light yellow background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex; /* Use flexbox to easily center the content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Give it some height */
+}
+
+.dash.no-results p {
+    /* Styles for the text itself */
+    font-size: 1.1em;
+    font-weight: 600; /* Slightly bold text */
+    color: #cc9900; /* Darker yellow/orange text color */
+}
